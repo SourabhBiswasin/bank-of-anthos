@@ -81,6 +81,11 @@ spec:
         tier: db
     spec:
       containers:
+        - env:
+          - name: ENABLE_TRACING
+            value: "false"
+          - name: ENABLE_METRICS
+            value: "false" 
         - envFrom:
             - configMapRef:
                 name: environment-config
